@@ -26,7 +26,6 @@ def build_structure_tree(
     files_to_read: List[Path],
     prefix: str = ""
 ) -> str:
-    """Recursively scans a directory with root-anchored, path-aware ignores."""
     try:
         entries = sorted(list(dir_path.iterdir()), key=lambda e: e.name.lower())
     except (FileNotFoundError, PermissionError):
