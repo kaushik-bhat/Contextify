@@ -30,7 +30,7 @@ When working with Large Language Models on a software project, providing the ful
 - Python 3.6 or newer.
 
 ### Step 1: Setup
-Place the `contextify.py` script in the root directory of the project you want to scan.
+Place the `ctx.py` script in the root directory of the project you want to scan.
 
 ### Step 2: Configuration (`.ctxignore`)
 Create a file named `.ctxignore` in the same root directory. This file defines all the files and folders you want to exclude from the context.
@@ -42,7 +42,7 @@ Here is a recommended template for your `.ctxignore` file:
 ```
 # --- Self-ignore ---
 # Ignore the Contextify tool's own files
-contextify.py
+ctx.py
 .ctxignore
 prompt_context.txt
 
@@ -78,7 +78,7 @@ Thumbs.db
 Navigate to your project's root directory in your terminal and run the script:
 
 ```bash
-python contextify.py
+python ctx.py
 ```
 
 ### Step 4: The Output
@@ -102,7 +102,7 @@ The script will run and create a `prompt_context.txt` file in the same directory
   - `/dist` ignores the `dist` folder at the project root but will **not** ignore a folder like `src/dist`.
 ---
 
-## Limitations
+## Limitations and Future Scope
 
 - **Binary File Detection:** The check is based on a heuristic (presence of NUL bytes) and may not be 100% accurate for all file types.
 - **Symbolic Links:** The script does not protect against infinite loops caused by recursive symbolic links.
